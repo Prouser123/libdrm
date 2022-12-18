@@ -25,7 +25,7 @@ jobs:
     - name: Rename source file to negate need for source tgz
       run: mv debian/source/format debian/source/format.1
     - name: Build debian package
-      run: CONFIG_SITE=/etc/dpkg-cross/cross-config.amd64 DEB_BUILD_OPTIONS=nocheck dpkg-buildpackage -armhf -Pcross,nocheck
+      run: CONFIG_SITE=/etc/dpkg-cross/cross-config.amd64 DEB_BUILD_OPTIONS=nocheck dpkg-buildpackage -aarmhf -Pcross,nocheck
     - name: Upload build artifacts
       uses: actions/upload-artifact@v3
       with:
