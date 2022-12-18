@@ -32,5 +32,10 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         path: libdrm*.*
+    - name: Upload .deb to github releases
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: dev
+        files: ./*.deb
       
       
